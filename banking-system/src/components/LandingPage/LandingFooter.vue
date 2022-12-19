@@ -5,10 +5,10 @@
         style="border-top: 10px solid #394DB8; color: white !important;"
     >
       <v-row
-          :dense="$vuetify.breakpoint.smAndDown"
-          justify="center"
-          no-gutters
-          style="background-color: transparent;"
+        :dense="$vuetify.breakpoint.smAndDown"
+        justify="center"
+        no-gutters
+        style="background-color: transparent;"
       >
         <v-spacer />
   
@@ -173,7 +173,7 @@
   }
   </script>
   
-  <style scoped>
+<style scoped>
   .text-class{
     color: white !important;
   }
