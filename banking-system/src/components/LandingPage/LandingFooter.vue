@@ -136,7 +136,7 @@
   </template>
   
   <script>
-  import { mdiInstagram, mdiLinkedin, mdiTwitter, mdiWhatsapp } from '@mdi/js';
+  // import { mdiInstagram, mdiLinkedin, mdiTwitter, mdiWhatsapp } from '@mdi/js';
   export default {
     data () {
       return {
@@ -161,10 +161,10 @@
         socials: {
           Title: 'ما را در فضای مجازی دنبال کنید',
           List: [
-            {icon: mdiInstagram, link: 'instagram.com/sanatyab.ir'},
-            {icon: mdiLinkedin, link: 'linkedin.com/sanatyab.ir'},
-            {icon: mdiTwitter, link: 't.me/sanatyab.ir'},
-            {icon: mdiWhatsapp, link: 'wa.me/sanatyab.ir' }
+            // {icon: mdiInstagram, link: 'instagram.com/sanatyab.ir'},
+            // {icon: mdiLinkedin, link: 'linkedin.com/sanatyab.ir'},
+            // {icon: mdiTwitter, link: 't.me/sanatyab.ir'},
+            // {icon: mdiWhatsapp, link: 'wa.me/sanatyab.ir' }
           ]
         },
         email: null

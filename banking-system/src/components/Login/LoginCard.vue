@@ -25,9 +25,9 @@
             </v-text-field>
           </v-row>
           <v-row class="mt-5 mx-2" justify="center" align="center">
+            <!-- :append-icon="show1 ? ImdiEye : ImdiEyeOff" -->
             <v-text-field
                 v-model="password"
-                :append-icon="show1 ? ImdiEye : ImdiEyeOff"
                 :rules="[rules.required, rules.min]"
                 :type="show1 ? 'text' : 'password'"
                 name="input-10-1"
@@ -58,7 +58,7 @@
   </template>
   
 <script>
-import { mdiEye, mdiEyeOff } from '@mdi/js';
+// import { mdiEye, mdiEyeOff } from '@mdi/js';
 export default {
     props: {
         isMobile: {
@@ -68,8 +68,8 @@ export default {
     },
     data () {
         return {
-        ImdiEye: mdiEye,
-        ImdiEyeOff: mdiEyeOff,
+        // ImdiEye: mdiEye,
+        // ImdiEyeOff: mdiEyeOff,
         show1: false,
         password: '',
         email: '',
@@ -83,47 +83,6 @@ export default {
         ],
         }
     },
-    methods:{
-        async fetchData(){
-        let axios = require('axios');
-        let FormData = require('form-data');
-        let data = new FormData();
-        data.append('email', this.email);
-        data.append('password', this.password);
-        var config = {
-            method: 'post',
-            url: this.$store.state.host + 'user/login',
-            headers: {
-            'Accept': 'application/json',
-            },
-            data : data
-        };
-        var errorToaster = (msg) => {
-            this.$toast.open({
-            message: msg,
-            type: 'error',
-            });
-        };
-        let that = this;
-        await axios(config)
-            .then(function (response) {
-                var result=response.data;
-                that.$cookies.set('token', result.token);
-                that.$cookies.set('user', result.user);
-                if (result.user.role==='user')
-                that.$router.push('/dashboard');
-                if (result.user.role==='company')
-                that.$router.push('/companyDashboard')
-            })
-            .catch(function (error) {
-                console.log(error);
-                if (error.status!=429)errorToaster('!ایمیل یا رمز عبور اشتباه است');
-            });
-        },
-        SignUp(){
-        this.$router.push('/signup');
-        },
-    }
 }
 </script>
 

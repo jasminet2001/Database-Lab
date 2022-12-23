@@ -104,41 +104,18 @@
   export default{
     name: 'AppBar',
     data(){
-        return{
-            tab:'',
-            avatar:'',
-            loggedIn: '',
-            drawer: false,
-            group: null,
-        }
+      return{
+        tab:'',
+        avatar:'',
+        loggedIn: '',
+        drawer: false,
+        group: null,
+      }
     },
-    methods: {
-      async updater() {
-        let axios = require('axios');
-        let config = {
-          method: 'get',
-          url: this.$store.state.host + 'user/this',
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': 'Bearer '+this.$cookies.get('token')
-          },
-        };
-        let that=this;
-        await axios(config)
-            .then(function (response) {
-              that.avatar = response.data.avatar
-              that.$cookies.set('user', response.data)
-              that.loggedIn=!!that.$cookies.get('user')
-            })
-            .catch(() => {
-              that.$cookies.remove('user');
-              that.$cookies.remove('token');
-            });
-      },
-    },
-    beforeMount() {
-      this.updater()
-    }
+    // methods: {
+
+    // },
+
   }
   </script>
   

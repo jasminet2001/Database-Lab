@@ -26,9 +26,9 @@
             </v-text-field>
           </v-row>
           <v-row class="mt-5 mx-2" justify="center" align="center">
+            <!-- :append-icon="show1 ? ImdiEye : ImdiEyeOff" -->
             <v-text-field
             v-model="password1"
-            :append-icon="show1 ? ImdiEye : ImdiEyeOff"
             :rules="[rules.required, rules.min]"
             :type="show1 ? 'text' : 'password'"
             name="input-10-1"
@@ -40,13 +40,13 @@
             ></v-text-field>
           </v-row>
           <v-row class="mt-5 mx-2" justify="center" align="center">
+            <!-- :append-icon="show2 ? ImdiEye : ImdiEyeOff" -->
             <v-text-field
-            v-model="password2"
-            :append-icon="show2 ? ImdiEye : ImdiEyeOff"
+            v-model="password2"   
             :rules="[rules.required, rules.min]"
             :type="show2 ? 'text' : 'password'"
             name="input-10-1"
-            label="رمز عبور"
+            label="تکرار رمز عبور"
             hint="حداقل ۸ کارکتر بنویسید"
             counter
             @click:append="show2 = !show2"
@@ -68,7 +68,7 @@
   </template>
   
   <script>
-  import {mdiEye, mdiEyeOff} from "@mdi/js";
+  // import {mdiEye, mdiEyeOff} from "@mdi/js";
   export default {
     props: {
       isMobile: {
@@ -78,8 +78,8 @@
     },
     data () {
       return {
-        ImdiEye: mdiEye,
-        ImdiEyeOff: mdiEyeOff,
+        // ImdiEye: mdiEye,
+        // ImdiEyeOff: mdiEyeOff,
         show1: false,
         show2: false,
         password1: '',
@@ -101,49 +101,6 @@
         ],
       }
     },
-    methods:{
-      async fetchData(){
-        var axios = require('axios');
-        var FormData = require('form-data');
-        var data = new FormData();
-        data.append('name', this.name);
-        data.append('email', this.email);
-        data.append('password', this.password1);
-        data.append('password_confirmation', this.password2);
-        var config = {
-          method: 'post',
-          url: this.$store.state.host + 'user/signup',
-          headers: {
-            'Accept': 'application/json',
-          },
-          data : data
-        };
-        let errorToaster = (msg) => {
-          this.$toast.open({
-            message: msg,
-            type: 'error',
-          });
-        };
-        await axios(config)
-            .then(result => {
-              result=result.data;
-              this.$cookies.set('token', result.token);
-              this.$cookies.set('user', result.user);
-              this.$router.push('/dashboard');
-            })
-            .catch(error => {
-              console.log(error);
-              if (error.response.status === 422) {
-                for (let err in error.response.data.errors) {
-                  errorToaster(error.response.data.errors[err][0]);
-                }
-              }
-            });
-      },
-      Login(){
-        this.$router.push('/login');
-      },
-    }
   }
 </script>
   

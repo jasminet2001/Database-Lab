@@ -2,21 +2,16 @@
     <v-container class="main-div" fluid>
       <v-row class="mb-3">
         <v-col>
-          <h1 style="font-weight: bolder; font-size: 1.5em">هنوز شرکت خود را ثبت نکرده اید؟</h1>
-        </v-col>
-      </v-row>
-      <v-row class="mb-6">
-        <v-col>
-          <h2 style="font-size: 1.2em; font-weight: normal">با ثبت شرکت خود، به خود شانس بیشتر دیده شدن بدهید!</h2>
+          <h1 style="font-weight: bolder; font-size: 2em; color: black;">هنوز در بانک ما حساب افتتاح نکرده اید؟</h1>
         </v-col>
       </v-row>
       <v-row>
         <v-col>
           <button class="btn btn-mobile" v-if="this.$vuetify.breakpoint.smAndDown">
-            ثبت شرکت
+            افتتاح حساب
           </button>
           <button class="btn" v-else>
-            ثبت شرکت
+            افتتاح حساب
           </button>
         </v-col>
       </v-row>
@@ -25,7 +20,7 @@
   
 <style scoped>
   .main-div {
-    background-image: url("../../assets/register-company.webp") !important;
+    background-image: url("../../assets/carlos-muza-hpjSkU2UYSU-unsplash.jpg") !important;
     background-size: cover;
     height: 90vh;
     padding: 10%;
@@ -73,7 +68,7 @@
   }
   .btn:hover::before, .btn:hover::after {
    height: 410px;
-   width: 410px;
+   width: 510px;
   }
   .btn:hover {
    color: rgb(10, 25, 30);
