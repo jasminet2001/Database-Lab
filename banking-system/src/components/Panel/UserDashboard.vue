@@ -13,8 +13,7 @@
     },
     data () {
       return {
-        adsList: [
-        ],
+
       }
     },
 }

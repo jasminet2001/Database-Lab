@@ -35,7 +35,7 @@
       <v-list nav
       dense
       >
-        <v-list-item link to="/userpanel">
+        <v-list-item link to="/dashboard">
           <v-list-item-icon>
             <v-icon>mdi-monitor-dashboard</v-icon>
           </v-list-item-icon>
@@ -125,7 +125,7 @@
           v-model="group"
           active-class="grey lighten-4--text text--accent-4"
           >
-            <v-list-item link to="/userpanel" class="py-2">
+            <v-list-item link to="/dashboard" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-monitor-dashboard</v-icon>
               </v-list-item-icon>
@@ -166,6 +166,7 @@
               </v-list-item-icon>
               <v-list-item-title>لیست شعبات</v-list-item-title>
             </v-list-item>
+          </v-list-item-group>
         </v-list>
   
         <v-divider></v-divider>
@@ -202,6 +203,9 @@
       drawer: false,
       group: null,
     }),
+    onMounted() {
+      this.$vuetify.rtl = true;
+    },
   }
   </script>
   
