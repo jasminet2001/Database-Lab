@@ -2,7 +2,7 @@
     <v-app>
       <sidebar-navigation></sidebar-navigation>
     </v-app>
-  </template>
+</template>
   
   <script>
   import SidebarNavigation from "./SidebarNavigation.vue";

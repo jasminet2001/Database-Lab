@@ -12,7 +12,7 @@
       <v-list>
         <v-list-item class="px-2">
           <v-list-item-avatar class="mx-auto">
-            <v-img :src="this.$cookies.get('user').avatar?'http://localhost:8000/storage/avatars/'+this.$cookies.get('user').avatar:'images/avatar.png/'"></v-img>
+            <v-img src=""></v-img>
           </v-list-item-avatar>
         </v-list-item>
   
@@ -20,11 +20,11 @@
           <v-list-item-content>
             <v-list-item-title
             class="text-h6 white--text">
-              {{this.$cookies.get('user').name}}
+              Name
             </v-list-item-title>
             <v-list-item-subtitle
             class="white--text">
-              {{this.$cookies.get('user').email}}
+              Jasmine@gmail.com
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
@@ -41,48 +41,35 @@
           </v-list-item-icon>
           <v-list-item-title>داشبورد</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="/editprofile">
+
+        <v-list-item link to="/">
           <v-list-item-icon>
             <v-icon>mdi-account-edit-outline</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>ویرایش پروفایل</v-list-item-title>
+          <v-list-item-title>لیست کارمندان</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="/changepass">
+
+        <v-list-item link to="/">
           <v-list-item-icon>
             <v-icon>mdi-lock-outline</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>ویرایش رمز عبور</v-list-item-title>
+          <v-list-item-title>لیست مشتریان</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="/bookmarks">
+
+        <v-list-item link to="/">
           <v-list-item-icon>
             <v-icon>mdi-bookmark-multiple</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>نشانک ها</v-list-item-title>
+          <v-list-item-title>پیگیری تراکنش</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="/subAds">
+
+        <v-list-item link to="/">
           <v-list-item-icon>
             <v-icon>mdi-form-select</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>ثبت آگهی</v-list-item-title>
+          <v-list-item-title>لیست شعبات</v-list-item-title>
         </v-list-item>
-        <!-- <v-list-item link to="/UserUpgrade">
-          <v-list-item-icon>
-            <v-icon>mdi-arrow-u-up-right-bold</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>ارتقای حساب</v-list-item-title>
-        </v-list-item> -->
-        <v-list-item link @click="Wallet()">
-          <v-list-item-icon>
-            <v-icon>mdi-credit-card-outline</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>کیف پول</v-list-item-title>
-        </v-list-item>
-        <v-list-item link to="/MyAdsList">
-          <v-list-item-icon>
-            <v-icon>mdi-file-document-edit-outline</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>آگهی های من</v-list-item-title>
-        </v-list-item>
+
         <v-list-item link @click="logout">
           <v-list-item-icon>
             <v-icon>mdi-exit-to-app</v-icon>
@@ -145,55 +132,40 @@
               <v-list-item-title>داشبورد</v-list-item-title>
             </v-list-item>
   
-            <v-list-item link to="/editprofile" class="py-2">
+            <v-list-item link to="/" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-account-edit-outline</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>ویرایش پروفایل</v-list-item-title>
+              <v-list-item-title>لیست کارمندان</v-list-item-title>
             </v-list-item>
   
-            <v-list-item link to="/changepass">
+            <v-list-item link to="/">
               <v-list-item-icon>
                 <v-icon>mdi-lock-outline</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>ویرایش رمز عبور</v-list-item-title>
+              <v-list-item-title>لیست کارمندان</v-list-item-title>
             </v-list-item>
   
-            <v-list-item link to="/bookmarks" class="py-2">
+            <v-list-item link to="/" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-bookmark-multiple</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>نشانک ها</v-list-item-title>
+              <v-list-item-title>لیست مشتریان</v-list-item-title>
             </v-list-item>
   
-            <v-list-item link to="/subAds" class="py-2">
+            <v-list-item link to="/" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-form-select</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>ثبت آگهی</v-list-item-title>
+              <v-list-item-title>پیگیری تراکنش</v-list-item-title>
             </v-list-item>
-  
-            <!-- <v-list-item link to="/userUpgrade" class="py-2">
-              <v-list-item-icon>
-                <v-icon>mdi-arrow-u-up-right-bold</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>ارتقای حساب</v-list-item-title>
-            </v-list-item> -->
-  
-            <v-list-item link to="/payment" class="py-2">
+
+            <v-list-item link to="/" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-credit-card-outline</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>کیف پول</v-list-item-title>
+              <v-list-item-title>لیست شعبات</v-list-item-title>
             </v-list-item>
-  
-          <v-list-item link to="/MyAdsList" class="py-2">
-            <v-list-item-icon>
-              <v-icon>mdi-file-document-edit-outline</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>آگهی های من</v-list-item-title>
-          </v-list-item>
-          </v-list-item-group>
         </v-list>
   
         <v-divider></v-divider>
