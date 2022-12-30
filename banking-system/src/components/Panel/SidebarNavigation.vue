@@ -42,25 +42,25 @@
           <v-list-item-title>داشبورد</v-list-item-title>
         </v-list-item>
 
-        <v-list-item link to="/">
+        <v-list-item link to="/employeelist">
           <v-list-item-icon>
             <v-icon>mdi-account-edit-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-title>لیست کارمندان</v-list-item-title>
         </v-list-item>
 
-        <v-list-item link to="/">
+        <v-list-item link to="/customerList">
           <v-list-item-icon>
             <v-icon>mdi-lock-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-title>لیست مشتریان</v-list-item-title>
         </v-list-item>
 
-        <v-list-item link to="/">
+        <v-list-item link to="/transactions">
           <v-list-item-icon>
             <v-icon>mdi-bookmark-multiple</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>پیگیری تراکنش</v-list-item-title>
+          <v-list-item-title>لیست تراکنش ها</v-list-item-title>
         </v-list-item>
 
         <v-list-item link to="/">
@@ -132,32 +132,25 @@
               <v-list-item-title>داشبورد</v-list-item-title>
             </v-list-item>
   
-            <v-list-item link to="/" class="py-2">
+            <v-list-item link to="/employeelist" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-account-edit-outline</v-icon>
               </v-list-item-icon>
               <v-list-item-title>لیست کارمندان</v-list-item-title>
             </v-list-item>
   
-            <v-list-item link to="/">
-              <v-list-item-icon>
-                <v-icon>mdi-lock-outline</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>لیست کارمندان</v-list-item-title>
-            </v-list-item>
-  
-            <v-list-item link to="/" class="py-2">
+            <v-list-item link to="/customerList" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-bookmark-multiple</v-icon>
               </v-list-item-icon>
               <v-list-item-title>لیست مشتریان</v-list-item-title>
             </v-list-item>
   
-            <v-list-item link to="/" class="py-2">
+            <v-list-item link to="/transactions" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-form-select</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>پیگیری تراکنش</v-list-item-title>
+              <v-list-item-title>لیست تراکنش ها</v-list-item-title>
             </v-list-item>
 
             <v-list-item link to="/" class="py-2">
