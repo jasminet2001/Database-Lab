@@ -12,24 +12,20 @@
     class="pr-4"
     >
       <v-tabs align-with-title >
+        <v-tab to="/">صفحه اصلی</v-tab>
+        
         <!-- <v-tab to="/about">درباره ما</v-tab> -->
-        <v-tab v-if="!loggedIn" >
-          <v-btn-toggle background-color="#000930" shaped>
+        <v-tab v-if="!loggedIn" to="/login">
+          ورود
+          <!-- <v-btn-toggle background-color="#000930" shaped>
             <v-btn to="/login" color="white" elevation="0" tile flat outlined class="pa-5">ورود</v-btn>
             <v-btn to="/signup" color="white" elevation="0" tile flat outlined class="">ثبت نام</v-btn>
-          </v-btn-toggle>
+          </v-btn-toggle> -->
         </v-tab>
-        <v-tab v-else to="/dashboard">
-          <v-btn icon>
-            <v-avatar
-            color="transparent"
-            size="50">
-              <v-img :src="avatar!=null?'http://localhost:8000/storage/avatars/'+avatar:'images/avatar.png/'"></v-img>
-            </v-avatar>
-          </v-btn>
-        </v-tab>
+        <v-tab v-if="!loggedIn" to="/signup">ثبت نام</v-tab>
+
+        <v-tab v-else to="/dashboard">داشبورد</v-tab>
         <v-spacer />
-        <v-tab to="/">صفحه اصلی</v-tab>
       </v-tabs>
     </v-app-bar>
   

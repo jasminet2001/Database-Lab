@@ -12,38 +12,9 @@
       >
         <v-spacer />
   
-        <v-col cols="12" md="3" lg="3" xl="3" class="my-2">
-          <h3 class="mb-4 text-class" align="center">
-            <a style="text-decoration: none; color: white">
-              {{ rightColumn.Title }}
-            </a>
-          </h3>
-          <v-item-group v-if="this.$vuetify.breakpoint.mdAndUp">
-            <div v-for="(item, index) in rightColumn.List" :key="index" class="my-2 text-class" align="center">
-              <v-item>
-                {{ item }}
-              </v-item>
-            </div>
-          </v-item-group>
-        </v-col>
-  
         <hr v-if="this.$vuetify.breakpoint.smAndDown" style="color: white !important; border-color: white !important; width: 100%;"/>
   
         <v-spacer />
-  
-        <v-col cols="5" md="3" lg="3" xl="3" v-if="this.$vuetify.breakpoint.mdAndUp" class="my-2">
-          <h3 class="mb-4 text-class" align="center">
-            {{ leftColumn.Title }}
-          </h3>
-          <v-item-group>
-            <div v-for="(item, index) in leftColumn.List" :key="index" class="my-2 text-class" align="center">
-              <v-item>
-                {{ item }}
-              </v-item>
-            </div>
-          </v-item-group>
-        </v-col>
-  
         <v-spacer />
   
         <v-col v-if="this.$vuetify.breakpoint.smAndDown" cols="12" md="8" lg="8" xl="6" class="mt-6">
@@ -102,8 +73,6 @@
             <v-spacer />
           </v-row>
         </v-col>
-  
-        <v-spacer />
   
         <v-col v-if="this.$vuetify.breakpoint.mdAndUp" cols="12" md="8" lg="8" xl="6" class="mt-6">
           <v-row justify="right" style="background-color: transparent; font-size: 1em; margin-right: .5em;">
