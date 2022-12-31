@@ -17,9 +17,9 @@
         >
           <v-card-text>
               <v-row>
-                <v-co>
+                <v-col cols="6">
                   <v-img src="../../assets/undraw_experience_design_re_dmqq.svg"></v-img>
-                </v-co>
+                </v-col>
                 <v-col></v-col>
               </v-row>
           </v-card-text>
