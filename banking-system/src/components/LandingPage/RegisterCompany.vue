@@ -2,7 +2,9 @@
     <v-container class="main-div" fluid>
       <v-row class="mb-3">
         <v-col>
-          <h1 style="font-weight: bolder; font-size: 2em; color: black;">هنوز در بانک ما حساب افتتاح نکرده اید؟</h1>
+          <h1 style="font-weight: bolder; font-size: 2em; color: white;
+            text-shadow: 2px 2px 2px black;
+          ">هنوز در بانک ما حساب افتتاح نکرده اید؟</h1>
         </v-col>
       </v-row>
       <v-row>

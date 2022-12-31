@@ -15,7 +15,7 @@ import RegisterCompany from "./RegisterCompany.vue";
 export default {
   name: "LandingPageComponent",
   onMounted() {
-    this.$vuetify.rtl = false
+    this.$vuetify.rtl = true
   },
   components: {
     RegisterCompany,

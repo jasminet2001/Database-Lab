@@ -9,11 +9,10 @@
     dark
     scroll-target="#scrolling-techniques-3"
     height="70%"
+    class="pr-4"
     >
       <v-tabs align-with-title >
-        <v-tab to="/">صفحه اصلی</v-tab>
-        <v-tab to="/about">درباره ما</v-tab>
-        <v-spacer />
+        <!-- <v-tab to="/about">درباره ما</v-tab> -->
         <v-tab v-if="!loggedIn" >
           <v-btn-toggle background-color="#000930" shaped>
             <v-btn to="/login" color="white" elevation="0" tile flat outlined class="pa-5">ورود</v-btn>
@@ -29,6 +28,8 @@
             </v-avatar>
           </v-btn>
         </v-tab>
+        <v-spacer />
+        <v-tab to="/">صفحه اصلی</v-tab>
       </v-tabs>
     </v-app-bar>
   
