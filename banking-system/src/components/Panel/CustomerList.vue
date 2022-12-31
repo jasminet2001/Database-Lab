@@ -1,8 +1,8 @@
 <template >
-    <v-sheet>
+    <v-app style="background-color: #353B51;">
         <sidebar-navigation-vue></sidebar-navigation-vue>
         <div class="header">
-            <h1>لیست مشتریان</h1>
+            <h1 style="color:white;">لیست مشتریان</h1>
         </div>
         <div class="card">
             <v-card width="70%">
@@ -23,7 +23,7 @@
                 </v-data-table>
         </v-card>
         </div>
-    </v-sheet>
+    </v-app>
 </template>
 
 <script>
@@ -83,16 +83,11 @@ export default {
     .card{
         width: 70%;
         margin: auto;
-        margin-top: 10em;
+        margin-top: 1em;
     }
     .header{
         width: 22%;
         margin: auto;
-        margin-top: 5em;
-    }
-    /* change background */
-    html{
-        background: rgb(132,108,241);
-        background: linear-gradient(90deg, rgba(132,108,241,1) 0%, rgba(225,205,244,1) 68%);
+        margin-top: 4em;
     }
 </style>

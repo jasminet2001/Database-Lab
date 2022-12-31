@@ -1,6 +1,30 @@
 <template>
-    <v-app>
+    <v-app style="background-color: #353B51;">
       <sidebar-navigation></sidebar-navigation>
+      <div class="header">
+        <h1 style="color:white;">داشبورد مدیریت</h1>
+      </div>
+      <div class="card">
+        <v-card
+        class="card-desktop"
+        style="margin-bottom: 4em;"
+        width="70vw"
+        height="87%"
+        elevation="4"
+        raised
+        rounded
+        outlined
+        >
+          <v-card-text>
+              <v-row>
+                <v-co>
+                  <v-img src="../../assets/undraw_experience_design_re_dmqq.svg"></v-img>
+                </v-co>
+                <v-col></v-col>
+              </v-row>
+          </v-card-text>
+        </v-card>
+      </div>
     </v-app>
 </template>
   
@@ -20,4 +44,49 @@
   </script>
   
   <style scoped>
+  .header{
+    width: 22%;
+    margin: auto;
+    margin-top: 4em;
+  }
+  .card{
+    height: 75%;
+    width: 85%;
+    margin: auto;
+  }
+.title{
+  margin: 2em;
+  margin-right: 17em;
+  }
+  .col *{
+    margin: .5em;
+  }
+  .btn{
+    margin-top: 2em;
+  }
+  .btn-mobile{
+    margin-top: 1em;
+  }
+  .title-res{
+    text-align: center;
+    margin: 2em;
+  }
+  .card-res{
+    margin: 1em;
+    padding: 1em;
+    border: 2px dashed #000080;
+  }
+  .card-desktop{
+    border: 2px dashed #3838f8;
+    /* background: #6565f8; */
+    padding: 10em;
+  }
+  .row-res{
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  }
+  .upload-title-res{
+    margin-left: 4em;
+  }
   </style>

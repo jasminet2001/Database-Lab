@@ -2,17 +2,17 @@
   <v-app style="background-color: #353B51;">
       <sidebar-navigation-vue></sidebar-navigation-vue>
       <div class="header">
-          <h1>لیست کارمندان</h1>
+          <h1 style="color: white;">لیست کارمندان</h1>
       </div>
       <div class="card">
           <v-card width="70%">
               <v-card-title>
                   <v-text-field
-                      v-model="search"
-                      append-icon="mdi-magnify"
-                      label="Search"
-                      single-line
-                      hide-details
+                  v-model="search"
+                  append-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                  hide-details
                   ></v-text-field>
               </v-card-title>
               <v-data-table
@@ -83,11 +83,11 @@ export default {
   .card{
     width: 70%;
     margin: auto;
-    margin-top: 10em;
+    margin-top: 1em;
   }
   .header{
     width: 22%;
     margin: auto;
-    margin-top: 5em;
+    margin-top: 4em;
   }
 </style>

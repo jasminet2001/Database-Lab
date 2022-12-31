@@ -1,19 +1,19 @@
 <template>
-    <v-sheet>
+    <v-app style="background-color: #353B51;">
         <sidebar-navigation-vue></sidebar-navigation-vue>
         <div class="header">
-            <h1>لیست شعبات</h1>
+          <h1 style="color:white;">لیست شعبات</h1>
         </div>
         <div class="card">
             <v-card width="70%">
-                <v-card-title>
-                    <v-text-field
-                        v-model="search"
-                        append-icon="mdi-magnify"
-                        label="Search"
-                        single-line
-                        hide-details
-                    ></v-text-field>
+              <v-card-title>
+                <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+                ></v-text-field>
                 </v-card-title>
                 <v-data-table
                 :headers="headers"
@@ -23,7 +23,7 @@
                 </v-data-table>
         </v-card>
         </div>
-    </v-sheet>
+    </v-app>
   </template>
   
   <script>
@@ -79,19 +79,14 @@
 </script>
   
 <style scoped>
-    .card{
-      width: 70%;
-      margin: auto;
-      margin-top: 10em;
-    }
-    .header{
-      width: 22%;
-      margin: auto;
-      margin-top: 5em;
-    }
-    /* change background */
-    html{
-      background: rgb(132,108,241);
-      background: linear-gradient(90deg, rgba(132,108,241,1) 0%, rgba(225,205,244,1) 68%);
-    }
+  .card{
+    width: 70%;
+    margin: auto;
+    margin-top: 1em;
+  }
+  .header{
+    width: 22%;
+    margin: auto;
+    margin-top: 4em;
+  }
 </style>
