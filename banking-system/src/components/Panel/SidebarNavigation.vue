@@ -63,11 +63,18 @@
           <v-list-item-title>لیست تراکنش ها</v-list-item-title>
         </v-list-item>
 
-        <v-list-item link to="/">
+        <v-list-item link to="/branchlist">
           <v-list-item-icon>
             <v-icon>mdi-form-select</v-icon>
           </v-list-item-icon>
           <v-list-item-title>لیست شعبات</v-list-item-title>
+        </v-list-item>
+
+        <v-list-item link to="/accountslist">
+          <v-list-item-icon>
+            <v-icon>mdi-form-select</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>لیست حساب ها</v-list-item-title>
         </v-list-item>
 
         <v-list-item link @click="logout">
@@ -153,12 +160,20 @@
               <v-list-item-title>لیست تراکنش ها</v-list-item-title>
             </v-list-item>
 
-            <v-list-item link to="/" class="py-2">
+            <v-list-item link to="/branchlist" class="py-2">
               <v-list-item-icon>
                 <v-icon>mdi-credit-card-outline</v-icon>
               </v-list-item-icon>
               <v-list-item-title>لیست شعبات</v-list-item-title>
             </v-list-item>
+
+            <v-list-item link to="/accountslist">
+              <v-list-item-icon>
+                <v-icon>mdi-form-select</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>لیست حساب ها</v-list-item-title>
+            </v-list-item>
+
           </v-list-item-group>
         </v-list>
   

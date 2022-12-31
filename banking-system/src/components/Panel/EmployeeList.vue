@@ -1,5 +1,5 @@
 <template>
-  <v-sheet>
+  <v-app style="background-color: #353B51;">
       <sidebar-navigation-vue></sidebar-navigation-vue>
       <div class="header">
           <h1>لیست کارمندان</h1>
@@ -23,7 +23,7 @@
               </v-data-table>
       </v-card>
       </div>
-  </v-sheet>
+  </v-app>
 </template>
 
 <script>
@@ -89,10 +89,5 @@ export default {
     width: 22%;
     margin: auto;
     margin-top: 5em;
-  }
-  /* change background */
-  html{
-    background: rgb(132,108,241);
-    background: linear-gradient(90deg, rgba(132,108,241,1) 0%, rgba(225,205,244,1) 68%);
   }
 </style>

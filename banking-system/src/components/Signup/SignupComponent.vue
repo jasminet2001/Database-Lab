@@ -53,9 +53,9 @@
       }
     },
   }
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   v-app{
     background-color: #000824c8;
   }

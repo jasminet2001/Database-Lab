@@ -7,6 +7,8 @@ import UserDash from "../components/Panel/UserDashboard.vue";
 import CustomerList from '../components/Panel/CustomerList.vue';
 import EmployeesList from "../components/Panel/EmployeeList.vue";
 import TransactionsList from "../components/Panel/TransactionsList.vue";
+import BranchList from "../components/Panel/BranchList.vue";
+import AccList from "../components/Panel/AccountsList.vue";
 
 Vue.use(VueRouter)
 
@@ -38,6 +40,15 @@ const routes = [
   {
     path: '/transactions',
     component: TransactionsList,
+  },
+  {
+    path: '/branchlist',
+    component: BranchList,
+  },
+  {
+    path: '/accountslist',
+    component: AccList,
+    meta: { bgColor: '#555555' }
   },
 ]
 
