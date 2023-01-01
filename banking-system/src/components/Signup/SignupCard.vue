@@ -16,9 +16,15 @@
             </v-col>
           </v-row>
           <v-row class="mt-8 mx-2" justify="center" align="center">
-            <v-text-field label="نام و نام خانوادگی"
+            <v-text-field label="نام"
             autofocus
             v-model="name">
+            </v-text-field>
+          </v-row>
+          <v-row class="mt-8 mx-2" justify="center" align="center">
+            <v-text-field label="نام خانوادگی"
+            autofocus
+            v-model="lastname">
             </v-text-field>
           </v-row>
           <v-row class="mt-5 mx-2" justify="center" align="center">
@@ -57,7 +63,7 @@
             <v-col cols="12">
               <v-btn class="btn white--text"
               color="#000824" width="100%"
-              @click="fetchData()">
+              @click="addUsers()">
                 ثبت نام
               </v-btn>
             </v-col>
@@ -69,6 +75,7 @@
   
   <script>
   // import {mdiEye, mdiEyeOff} from "@mdi/js";
+  import axios from 'axios';
   export default {
     props: {
       isMobile: {
@@ -101,6 +108,19 @@
         ],
       }
     },
+    methods:{
+      addUsers(){
+        axios.get("",
+        {
+          // first_name = this.name;
+          // last_name = this.lastname
+          // username = this.email;
+          // password1 = this.password1;
+          // password2 = this.password2;
+        }
+        );
+      }
+    }
   }
 </script>
   

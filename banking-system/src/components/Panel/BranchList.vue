@@ -80,13 +80,15 @@
   
 <style scoped>
   .card{
-    width: 70%;
-    margin: auto;
-    margin-top: 1em;
+    width: 90%;
+      margin: auto;
+      margin-top: 1em;
+      margin-right: 25%;
   }
   .header{
     width: 22%;
     margin: auto;
     margin-top: 4em;
+    margin-right: 25%;
   }
 </style>

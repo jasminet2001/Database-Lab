@@ -48,11 +48,13 @@
     width: 22%;
     margin: auto;
     margin-top: 4em;
+    margin-right: 25%;
   }
   .card{
     height: 75%;
     width: 85%;
     margin: auto;
+    margin-right: 20%;
   }
 .title{
   margin: 2em;
