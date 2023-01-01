@@ -2,68 +2,46 @@
   <v-app style="background-color: #353B51;">
       <sidebar-navigation-vue></sidebar-navigation-vue>
       <div class="header">
-          <h1 style="color: white;">لیست کارمندان</h1>
+        <h1 style="color: white;">لیست کارمندان</h1>
       </div>
       <div class="card">
           <v-card width="70%">
-              <v-card-title>
-                  <v-text-field
-                  v-model="search"
-                  append-icon="mdi-magnify"
-                  label="Search"
-                  single-line
-                  hide-details
-                  ></v-text-field>
-              </v-card-title>
-              <v-data-table
-              :headers="headers"
-              :items="cutomers"
-              :search="search"
-              >
-              </v-data-table>
+            <v-card-title>
+                <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="جست و جو"
+                single-line
+                hide-details
+                ></v-text-field>
+            </v-card-title>
+            <v-data-table
+            :headers="headers"
+            :items="users"
+            :search="search"
+            >
+            </v-data-table>
       </v-card>
       </div>
   </v-app>
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 import SidebarNavigationVue from './SidebarNavigation.vue';
 export default {
     components:{
       SidebarNavigationVue
     },
     data: () => ({
+      users:[],
       search: '',
       headers: [
-      {
-          text: 'First Name',
-          align: 'start',
-          value: 'name',
-      },
-      { text: 'Last Name', value: 'lastname' },
-      { text: 'National ID', value: 'id' , filterable: true,},
-      // { text: 'Carbs (g)', value: 'carbs' },
-      // { text: 'Protein (g)', value: 'protein' },
-      // { text: 'Iron (%)', value: 'iron' },
-      ],
-
-      cutomers: [
-        {
-          name: 'ali',
-          lastname: 'ehsani',
-          id: 124,
-        },
-        {
-          name: 'ali',
-          lastname: 'tavakkoli',
-          id: 123,
-        },
-        {
-          name: 'ehsan',
-          lastname: 'khosdoost',
-          id: 121,
-        },
+        {text: 'نام',align: 'start',value: 'e_national_id__first_name',},
+        { text: 'نام خانوادگی', value: 'e_national_id__last_name' },
+        { text: 'موقعیت شغلی', value: 'job_position' , filterable: true,},
+        { text: 'شماره ملی', value: 'e_national_id' , filterable: true,},
+        { text: 'وضعیت استحدامی', value: 'e_national_id__employee__employment_status' , filterable: true,},
       ],
     }),
     onMounted() {
@@ -71,11 +49,23 @@ export default {
     },
     methods:{
       ShowCustomers(){
-          // for (let i = 0; i < 5; i++) {
-          //     i = i+2;
-          // }
       }
     },
+
+    beforeCreate(){
+      this.users = [];
+      var that = this;
+      axios.get('http://127.0.0.1:8000/all_employees/')
+        .then( (response) => {
+          const data = response.data;
+          that.users = data;
+          console.log(that.users);
+          });
+        console.log(that.users)
+        .catch( error=>{
+          console.log(error);
+      });
+    }
 }
 </script>
 

@@ -110,15 +110,42 @@
     },
     methods:{
       addUsers(){
-        axios.get("",
-        {
-          // first_name = this.name;
-          // last_name = this.lastname
-          // username = this.email;
-          // password1 = this.password1;
-          // password2 = this.password2;
-        }
-        );
+        // axios.post("http://127.0.0.1:8000/signup/",
+        // {
+        //   first_name: this.name,
+        //   last_name: this.lastname,
+        //   username: this.email,
+        //   password1: this.password1,
+        //   password2:this.password2,
+        // })
+        // .then(function (response) {
+        //   console.log(response);
+        // })
+        // .catch(function (error) {
+        //   console.log(error);
+        // });
+
+    var FormData = require('form-data');
+    var data = new FormData();
+    data.append('password1', 'this.password1');
+    data.append('password2', 'this.password1');
+    data.append('first_name', 'this.name');
+    data.append('last_name', 'this.lastname');
+    data.append('username', 'this.email');
+
+    var config = {
+      method: 'post',
+      url: 'http://127.0.0.1:8000/signup/',
+      data : data
+    };
+
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
       }
     }
   }

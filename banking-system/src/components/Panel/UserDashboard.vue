@@ -17,7 +17,14 @@
         >
           <v-card-text>
               <v-row>
-                <v-col cols="6"></v-col>
+                <v-col cols="6">
+                  <v-row>
+
+                  </v-row>
+                  <v-row></v-row>
+                  <v-row></v-row>
+                </v-col>
+
                 <v-col cols="6">
                   <v-img src="../../assets/undraw_experience_design_re_dmqq.svg"></v-img>
                 </v-col>
@@ -38,7 +45,10 @@
     },
     data () {
       return {
-
+        name:'',
+        lastname: '',
+        email: '',
+        id: '',
       }
     },
 }

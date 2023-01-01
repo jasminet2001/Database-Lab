@@ -4,7 +4,7 @@
         <div class="header">
             <h1 style="color:white;">لیست مشتریان</h1>
         </div>
-        <div class="card">
+        <div class="card" >
             <v-card width="70%">
                 <v-card-title>
                     <v-text-field
@@ -16,13 +16,12 @@
                     ></v-text-field>
                 </v-card-title>
                 <v-data-table
-                class="elevation-1"
+                class="elevation-1 table"
                 :headers="headers"
                 :items="users"
                 :search="search"
                 >
                 </v-data-table>
-
         </v-card>
         </div>
     </v-app>
@@ -31,6 +30,7 @@
 <script>
 import axios from 'axios';
 import SidebarNavigationVue from './SidebarNavigation.vue';
+
 export default {
     components:{
         SidebarNavigationVue
@@ -39,45 +39,52 @@ export default {
         users: [],
         search: '',
         headers: [
-            {text: 'نام',align: 'start',value: 'name',},
-            { text: 'نام خانوادگی', value: 'lastname' },
-            { text: 'کد ملی', value: 'id' , filterable: true,},
+            {text: 'نام',align: 'start',value: 'c_national_id__first_name',},
+            { text: 'نام خانوادگی', value: 'c_national_id__last_name' },
+            { text: 'کد ملی', value: 'c_national_id' , filterable: true,},
         ],
-
-        // cutomers: [
-        //     {
-        //         name: 'ali',
-        //         lastname: 'ehsani',
-        //         id: 124,
-        //     },
-        //     {
-        //         name: 'ali',
-        //         lastname: 'tavakkoli',
-        //         id: 123,
-        //     },
-        //     {
-        //         name: 'ehsan',
-        //         lastname: 'khosdoost',
-        //         id: 121,
-        //     },
-        // ],
     }),
 
     methods:{
-        onMounted() {
-            axios.get('https://jsonplaceholder.typicode.com/users')
-                .then( response => {
-                this.users = response.data.users;
+        async ShowCustomers() {
+            this.users = [];
+            var that = this;
+            await axios.get('http://127.0.0.1:8000/all_customers/')
+                .then( (response) => {
+                    const data = response.data;
+                    that.users = data;
+                    console.log(that.users);
                 });
-                // .catch( error=>{
-                //     console.log(error);
-                // });
+            console.log(that.users)
+            .catch( error=>{
+                console.log(error);
+            });
         },
     },
+
+    beforeCreate(){
+        this.users = [];
+        var that = this;
+        axios.get('http://127.0.0.1:8000/all_customers/')
+            .then( (response) => {
+                const data = response.data;
+                that.users = data;
+                console.log(that.users);
+            });
+        console.log(that.users)
+        .catch( error=>{
+            console.log(error);
+        });
+    }
+
 }
+
 </script>
 
 <style scoped>
+    .table{
+        color:black;
+    }
     .card{
         width: 90%;
         margin: auto;

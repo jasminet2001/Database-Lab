@@ -6,21 +6,21 @@
       </div>
       <div class="card">
           <v-card width="70%">
-              <v-card-title>
-                  <v-text-field
-                      v-model="search"
-                      append-icon="mdi-magnify"
-                      label="Search"
-                      single-line
-                      hide-details
-                  ></v-text-field>
-              </v-card-title>
-              <v-data-table
-              :headers="headers"
-              :items="cutomers"
-              :search="search"
-              >
-              </v-data-table>
+            <v-card-title>
+              <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              label="جست و جو"
+              single-line
+              hide-details
+              ></v-text-field>
+            </v-card-title>
+            <v-data-table
+            :headers="headers"
+            :items="users"
+            :search="search"
+            >
+            </v-data-table>
       </v-card>
       </div>
   </v-app>
@@ -28,53 +28,44 @@
 
 <script>
 import SidebarNavigationVue from './SidebarNavigation.vue';
-export default {
-    components:{
-      SidebarNavigationVue
-    },
-    data: () => ({
-      search: '',
-      headers: [
-      {
-          text: 'First Name',
-          align: 'start',
-          value: 'name',
-      },
-      { text: 'Last Name', value: 'lastname' },
-      { text: 'National ID', value: 'id' , filterable: true,},
-      // { text: 'Carbs (g)', value: 'carbs' },
-      // { text: 'Protein (g)', value: 'protein' },
-      // { text: 'Iron (%)', value: 'iron' },
-      ],
+import axios from 'axios';
 
-      cutomers: [
-        {
-          name: 'ali',
-          lastname: 'ehsani',
-          id: 124,
-        },
-        {
-          name: 'ali',
-          lastname: 'tavakkoli',
-          id: 123,
-        },
-        {
-          name: 'ehsan',
-          lastname: 'khosdoost',
-          id: 121,
-        },
-      ],
-    }),
-    onMounted() {
-      this.$vuetify.rtl = true;
-    },
-    methods:{
-      ShowCustomers(){
-          // for (let i = 0; i < 5; i++) {
-          //     i = i+2;
-          // }
-      }
-    },
+export default {
+  components:{
+    SidebarNavigationVue
+  },
+  data: () => ({
+    users: [],
+    search: '',
+    headers: [
+      { text: 'بانک میدا', value: 'source_bank' },
+      { text: 'بانک مقصد', value: 'destination_bank' },
+      { text: 'شماره تراکنش', value: 'destination_deposit_num' , filterable: true,},
+      { text: 'مبلغ', value: 'amount' },
+    ],
+  }),
+  onMounted() {
+    this.$vuetify.rtl = true;
+  },
+  methods:{
+    ShowCustomers(){
+    }
+  },
+
+  beforeCreate(){
+    this.users = [];
+    var that = this;
+    axios.get('http://127.0.0.1:8000/all_transactions/')
+    .then( (response) => {
+      const data = response.data;
+      that.users = data;
+      console.log(that.users);
+    });
+    console.log(that.users)
+    .catch( error=>{
+      console.log(error);
+    });
+  }
 }
 </script>
 
