@@ -21,11 +21,6 @@
                 :items="users"
                 :search="search"
                 >
-                    <template v-slot: item.name = {item}>
-                        {{ item.name }}
-                        {{ item.lastname }}
-                        {{ item.id }}
-                    </template>
                 </v-data-table>
 
         </v-card>
