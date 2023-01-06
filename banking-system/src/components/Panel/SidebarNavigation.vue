@@ -20,11 +20,11 @@
           <v-list-item-content>
             <v-list-item-title
             class="text-h6 white--text">
-              Name
+              الهام وزیری
             </v-list-item-title>
             <v-list-item-subtitle
             class="white--text">
-              Jasmine@gmail.com
+              elham@gmail.com
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>

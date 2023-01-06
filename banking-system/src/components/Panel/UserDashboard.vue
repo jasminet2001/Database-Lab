@@ -9,26 +9,40 @@
         class="card-desktop"
         style="margin-bottom: 4em;"
         width="70vw"
-        height="87%"
+        height="100%"
         elevation="4"
         raised
         rounded
         outlined
         >
-          <v-card-text>
+          <v-card-text style="color:white;">
               <v-row>
                 <v-col cols="6">
                   <v-row>
+                    <h1>خوش آمدید مدیر گرامی</h1>
+                  </v-row>
+                  <v-row>
+                    <h2>نام: الهام</h2>
+                  </v-row>
+                  <v-row>
+                    <h2>نام خانوادگی: وزیری</h2>
+                  </v-row>
+                  <v-row>
+                    <h2>منسب: مدیریت</h2>
+                  </v-row>
+                  <v-row>
+                    <h2>آدرس ایمیل: elham@gmail.com</h2>
+                  </v-row>
+                  <v-row>
 
                   </v-row>
-                  <v-row></v-row>
-                  <v-row></v-row>
                 </v-col>
 
                 <v-col cols="6">
                   <v-img src="../../assets/undraw_experience_design_re_dmqq.svg"></v-img>
                 </v-col>
                 <v-col></v-col>
+
               </v-row>
           </v-card-text>
         </v-card>

@@ -9,7 +9,7 @@
             <v-col cols="12">
               <v-row>
                 <p class="mt-3" style="margin: 0 auto;">حساب کاربری دارید؟</p>
-                <a @click="Login()" class="mt-3"
+                <a href="http://localhost:8080/login" class="mt-3"
                 style="color:black; text-decoration:none; font-style: italic; margin: 0 auto">
                 وارد شوید</a>
               </v-row>
@@ -93,6 +93,7 @@
         password2: '',
         email:'',
         name:'',
+        lastname:'',
         rules: {
           required: password1 => !!password1 || 'رمز عبور لازم است!',
           min: v => v.length >= 8 || 'حداقل ۸ کارکتر بنویسید.',
@@ -110,42 +111,27 @@
     },
     methods:{
       addUsers(){
-        // axios.post("http://127.0.0.1:8000/signup/",
-        // {
-        //   first_name: this.name,
-        //   last_name: this.lastname,
-        //   username: this.email,
-        //   password1: this.password1,
-        //   password2:this.password2,
-        // })
-        // .then(function (response) {
-        //   console.log(response);
-        // })
-        // .catch(function (error) {
-        //   console.log(error);
-        // });
+        var FormData = require('form-data');
+        var data = new FormData();
+        data.append('password1', 'this.password1');
+        data.append('password2', 'this.password1');
+        data.append('first_name', 'this.name');
+        data.append('last_name', 'this.lastname');
+        data.append('username', 'this.email');
 
-    var FormData = require('form-data');
-    var data = new FormData();
-    data.append('password1', 'this.password1');
-    data.append('password2', 'this.password1');
-    data.append('first_name', 'this.name');
-    data.append('last_name', 'this.lastname');
-    data.append('username', 'this.email');
+        var config = {
+          method: 'post',
+          url: 'http://127.0.0.1:8000/signup/',
+          data : data
+        };
 
-    var config = {
-      method: 'post',
-      url: 'http://127.0.0.1:8000/signup/',
-      data : data
-    };
-
-    axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+        axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       }
     }
   }

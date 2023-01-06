@@ -10,7 +10,7 @@
             <v-col cols="12">
               <v-row>
                 <p class="mt-3" style="margin: 0 auto;">حساب کاربری ندارید؟</p>
-                <a @click="SignUp()" class="mt-3"
+                <a href="http://localhost:8080/signup" class="mt-3"
                 style="color:black; text-decoration:none; font-style: italic; margin: 0 auto">
                 ثبت نام کنید</a>
               </v-row>
@@ -59,7 +59,7 @@
   </template>
   
 <script>
-import axios from 'axios'
+import axios from 'axios';
 // import { mdiEye, mdiEyeOff } from '@mdi/js';
 export default {
     props: {
@@ -87,13 +87,30 @@ export default {
     },
     methods:{
       async Login(){
-        let result = await axios.get(
-          "localhost/users?email=${this.email}&password=${this.password}"
-        );
-        if(result==200 && 0 < result.data.length){
-          localStorage.setItem("user-info", JSON.stringify(result.data[0]));
-          this.$router.push({name: '/Dashboard'});
-        }
+        // let result = await axios.get(
+        //   "http://localhost:8080/login/users?username=${this.email}&password=${this.password}"
+        // );
+        // if(result==200 && 0 < result.data.length){
+        //   localStorage.setItem("user-info", JSON.stringify(result.data[0]));
+        //   this.$router.push({name: '/Dashboard'});
+        // }
+        var FormData = require('form-data');
+        var data = new FormData();
+        data.append('username', 'this.email');
+        data.append('password', 'this.password');
+
+        var config = {
+          method: 'post',
+          url: 'http://127.0.0.1:8000/login/',
+          data : data
+        };
+        axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       },
       mounted(){
         let user = localStorage.getItem('user-info');
@@ -101,6 +118,7 @@ export default {
           this.$router.push({name: '/Dashboard'});
         }
       },
+      
     },
 }
 </script>
