@@ -2,7 +2,7 @@
 
 [Backend Repository](https://github.com/SoheilHoseini/bank-management-system-django)
 
-This project is created as a banking management system. Vue3 and Vuetify was used in the making of the frontend. This project is mostly responsive in design. 
+This project is created as a banking management system. Vue3 and Vuetify were used in the making of the frontend. This project is mostly responsive in design. 
 
 Below are some screenshots from the project.
 
